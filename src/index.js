@@ -1,1 +1,1 @@
-import Notiflix from 'notiflix';
+import { main } from './js';
