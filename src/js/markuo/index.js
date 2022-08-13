@@ -14,7 +14,7 @@ export const createPhotoCard = (data = []) => {
         downloads,
       }) => {
         return `
-  <a class="photo-card" href="${largeImageURL}" onclick="(e)=>{e.preventDefault()}">
+  <a class="photo-card" href="${largeImageURL}">
   <img
     src="${webformatURL}"
     alt="${tags}"
