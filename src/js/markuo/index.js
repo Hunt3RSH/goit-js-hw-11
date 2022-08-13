@@ -1,23 +1,43 @@
+import { gallery } from '../refs';
+
 export const createPhotoCard = (data = []) => {
-  return data
-    .map(img => {
-      return `<div class="photo-card">
-  <img src="" alt="" loading="lazy" />
+  const imgMarkup = data
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        webformatWidth,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => {
+        return `
+  <a class="photo-card" href="${largeImageURL}" onclick="(e)=>{e.preventDefault()}">
+  <img
+    src="${webformatURL}"
+    alt="${tags}"
+    loading="lazy"
+    width="${webformatWidth}"
+    height="400"
+  />
   <div class="info">
     <p class="info-item">
-      <b>Likes</b>
+      <b>Likes:<br> ${likes}</b>
     </p>
     <p class="info-item">
-      <b>Views</b>
+      <b>Views:<br> ${views}</b>
     </p>
     <p class="info-item">
-      <b>Comments</b>
+      <b>Comments:<br> ${comments}</b>
     </p>
     <p class="info-item">
-      <b>Downloads</b>
+      <b>Downloads:<br> ${downloads}</b>
     </p>
-  </div>
-</div>`;
-    })
+  </div></a>`;
+      }
+    )
     .join('');
+  return gallery.insertAdjacentHTML('beforeend', imgMarkup);
 };
