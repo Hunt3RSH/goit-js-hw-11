@@ -27,6 +27,10 @@ const onSubmitForm = async e => {
   if (element.hits.length === 0) {
     loadMore.style.display = 'none';
     return onError();
+  } else if (element.totalHits <= 40) {
+    loadMore.style.display = 'none';
+    createPhotoCard(element.hits, onSuccess(element.totalHits));
+    lightbox.refresh();
   } else {
     createPhotoCard(element.hits, onSuccess(element.totalHits));
     lightbox.refresh();
