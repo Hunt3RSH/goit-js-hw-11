@@ -34,14 +34,27 @@ const onSubmitForm = async e => {
   }
 };
 
+// const onLoadMore = async e => {
+//   incrementPage();
+//   const element = await getImg(value);
+//   if (PAGE >= Math.floor(element.totalHits / element.hits)) {
+//     loadMore.style.display = 'none';
+//     onEnd();
+//   }
+//   createPhotoCard(element.hits);
+//   lightbox.refresh();
+// };
+
 const onLoadMore = async e => {
   incrementPage();
   const element = await getImg(value);
-  if (element.hits.length !== 40) {
+  console.log(PAGE);
+  if (PAGE >= Math.floor(element.totalHits / 40)) {
     loadMore.style.display = 'none';
     onEnd();
   }
   createPhotoCard(element.hits);
+  lightbox.refresh();
 };
 
 loadMore.addEventListener('click', onLoadMore);
