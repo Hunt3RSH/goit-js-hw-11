@@ -31,6 +31,7 @@ const onSubmitForm = async e => {
     loadMore.style.display = 'none';
     createPhotoCard(element.hits, onSuccess(element.totalHits));
     lightbox.refresh();
+    onEnd();
   } else {
     createPhotoCard(element.hits, onSuccess(element.totalHits));
     lightbox.refresh();
