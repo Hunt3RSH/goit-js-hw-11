@@ -100,6 +100,9 @@ body {
     align-items: flex-end;
     padding: 15px;
     justify-content: center;
+    background-color: aliceblue;
+    z-index: 1;
+    overflow: hidden;
     .info-item {
       display: flex;
       justify-content: center;
