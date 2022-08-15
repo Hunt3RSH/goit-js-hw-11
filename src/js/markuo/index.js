@@ -15,25 +15,25 @@ export const createPhotoCard = (data = []) => {
       }) => {
         return `
   <a class="photo-card" href="${largeImageURL}">
-  <img
+   <div class="card-img"><img
     src="${webformatURL}"
     alt="${tags}"
     loading="lazy"
     width="${webformatWidth}"
     height="400"
-  />
+  /></div>
   <div class="info">
     <p class="info-item">
-      <b>Likes:<br> ${likes}</b>
+      <b>Likes:</b> ${likes}
     </p>
     <p class="info-item">
-      <b>Views:<br> ${views}</b>
+      <b>Views:</b> ${views}
     </p>
     <p class="info-item">
-      <b>Comments:<br> ${comments}</b>
+      <b>Comments:</b> ${comments}
     </p>
     <p class="info-item">
-      <b>Downloads:<br> ${downloads}</b>
+      <b>Downloads:</b> ${downloads}
     </p>
   </div></a>`;
       }
